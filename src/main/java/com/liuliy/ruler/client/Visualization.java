@@ -49,7 +49,7 @@ public class Visualization {
         }
     }
    //获取生成粒子的坐标
-    @Environment(EnvType.CLIENT)
+
     public static Vec3d getPosition(BlockPos pos,Direction dir){
             Vec3d position = new Vec3d(pos.getX(), pos.getY() , pos.getZ()).add(getOffset(dir));
         return position ;
