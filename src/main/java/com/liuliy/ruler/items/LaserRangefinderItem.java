@@ -23,7 +23,7 @@ public class LaserRangefinderItem extends RulerToolPlus  {
     protected TypedActionResult<ItemStack> handleMeasurement(PlayerEntity player, World world, Hand hand, BlockPos pos, Direction dir) {
         // 记录第二个点并计算距离
         double distance = calculateDistance(player.getBlockPos(), pos);
-        player.sendMessage(Text.literal("message.ruler-mod.measure_distance " + (int)Math.floor(distance+1) + " 格"), false);
+        player.sendMessage(Text.translatable("message.ruler-mod.measure_distance" ,(int)Math.floor(distance+1)), false);
         //并且在两点之间生成一条粒子线
         spawnParticlesBetweenNow(world,player.getBlockPos(), pos,dir);
         return TypedActionResult.success(player.getStackInHand(hand));

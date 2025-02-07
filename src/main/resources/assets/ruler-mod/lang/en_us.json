@@ -5,7 +5,8 @@
   "message.ruler-mod.measure_start": "§aThe starting point is recorded！",
   "message.ruler-mod.cross_dimension_error": "§cRulers cannot be used across dimensions！",
   "message.ruler-mod.measure_clear": "§aThe measure marker has been cleared！",
-  "message.ruler-mod.measure_distance": "§aMeasure the distance between the two points is:",
-  "message.ruler-mod.measure_block": "§aBlock:"
+  "message.ruler-mod.measure_distance": "§aThe distance between the two points : %1$s §ablocks",
+  "message.ruler-mod.measure_block": "§aBlock:",
+  "message.ruler-mod.aim_at_block": "§cPlease aim at the block"
 
 }

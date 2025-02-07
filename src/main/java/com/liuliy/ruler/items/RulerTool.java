@@ -35,7 +35,7 @@ public abstract class RulerTool extends Item {
         // Shift+右键清除测量
         if (player.isSneaking()) {
             MEASUREMENTS.remove(player);
-            player.sendMessage(Text.literal("§a已清除测量标记！"), false);
+            player.sendMessage(Text.translatable("message.ruler-mod.measure_clear"), false);
             // 停止粒子效果
             clearParticle();
             return ActionResult.SUCCESS;

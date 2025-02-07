@@ -5,8 +5,8 @@
   "message.ruler-mod.measure_start": "§a起点已记录！",
   "message.ruler-mod.cross_dimension_error": "§c尺子不能跨维度使用！",
   "message.ruler-mod.measure_clear": "§a已清除测量标记！",
-  "message.ruler-mod.measure_distance": "§a测量出两点的距离是:",
-  "message.ruler-mod.measure_block": "§a格:"
+  "message.ruler-mod.measure_distance": "§a两点间的距离: %1$s §a格",
+  "message.ruler-mod.aim_at_block": "§c请对准方块使用"
 
 
 }

@@ -33,7 +33,7 @@ public abstract class RulerToolPlus extends Item {
 
         BlockHitResult hitResult = (BlockHitResult) player.raycast(128, 0, false);
         if (hitResult.getType() != HitResult.Type.BLOCK) {
-            player.sendMessage(Text.literal("§c请对准方块使用！"), false);
+            player.sendMessage(Text.translatable("message.ruler-mod.aim_at_block"), false);
             return TypedActionResult.fail(player.getStackInHand(hand));
         }
         BlockPos pos = hitResult.getBlockPos();
