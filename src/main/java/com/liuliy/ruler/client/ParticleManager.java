@@ -67,8 +67,8 @@ public class ParticleManager {
 
     }
     // 移除测量
-    public static void removeParticle(BlockPos pos) {
-        activeParticles.removeIf(m -> m.blockPos.equals(pos));
+    public static void removeParticle(Vec3d pos) {
+        activeParticles.removeIf(m -> m.position.equals(pos));
     }
 
     public static void removeParticle() {

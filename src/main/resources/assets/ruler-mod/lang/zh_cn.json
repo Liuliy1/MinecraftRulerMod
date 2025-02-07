@@ -2,6 +2,9 @@
   "item.ruler-mod.straight_ruler": "直尺",
   "item.ruler-mod.laser_rangefinder": "激光测距仪",
   "item.ruler-mod.compass": "圆规",
+  "item.ruler-mod.laser_ruler": "激光直尺",
   "message.ruler-mod.measure_start": "§a起点已记录！",
   "message.ruler-mod.measure_clear": "§a已清除测量标记！"
+
+
 }

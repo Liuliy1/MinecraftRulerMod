@@ -1,5 +1,7 @@
 package com.liuliy.ruler.items;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -55,6 +57,7 @@ public abstract class RulerToolPlus extends Item {
     protected  abstract void clearParticle();
     protected static class MeasurementData {
         public BlockPos[] points = new BlockPos[2];  // 记录两个点的数组
+        public World[] worlds = new World[2];  // 记录两个维度的数组
         public int step = 0;  // 当前步骤
         public MeasurementData() {
             // 初始化为空点

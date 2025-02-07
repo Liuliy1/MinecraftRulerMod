@@ -1,6 +1,8 @@
 package com.liuliy.ruler.client;
 
 
+import com.liuliy.ruler.items.LaserRulerItem;
+import com.liuliy.ruler.items.StraightRulerItem;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -26,9 +28,9 @@ public class Visualization {
 
     }
 
-    // 在两点之间生成粒子效果的直线
+    // 在两点之间生成持续的粒子效果的直线
     @Environment(EnvType.CLIENT)
-    public static void spawnParticlesBetween(World world, BlockPos point1, BlockPos point2,Direction dir) {
+    public static void spawnParticlesBetween(World world, BlockPos point1, BlockPos point2,Direction dir,String item) {
         if (world.isClient) {
             // 计算两点之间的差值
             double dx = point2.getX() - point1.getX();
@@ -44,7 +46,18 @@ public class Visualization {
                 double x = point1.getX() + dx * fraction;
                 double y = point1.getY() + dy * fraction;
                 double z = point1.getZ() + dz * fraction;
-                ParticleManager.addParticle(new Vec3d(x,y,z).add(offset),dir);
+                Vec3d position = new Vec3d(x,y,z).add(offset);
+                ParticleManager.addParticle(position,dir);
+               switch (item){
+                   case "ruler":
+                       StraightRulerItem.activePos.add(position);
+                       break;
+                   case "laserRuler":
+                       LaserRulerItem.activePos.add(position);
+                       break;
+                   default:
+                       break;
+               }
             }
         }
     }

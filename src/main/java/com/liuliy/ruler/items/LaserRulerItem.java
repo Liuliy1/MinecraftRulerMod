@@ -6,8 +6,11 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
+import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
@@ -18,22 +21,22 @@ import java.util.List;
 
 import static com.liuliy.ruler.client.Visualization.spawnParticlesBetween;
 
-public class StraightRulerItem extends RulerTool {
+public class LaserRulerItem extends RulerToolPlus {
+    public static List<Vec3d> activePos = new ArrayList<>();
 
-    public StraightRulerItem() {
+    public LaserRulerItem( ) {
         super(new Item.Settings());
     }
     PlayerEntity player;
-    public static List<Vec3d> activePos = new ArrayList<>();
+
     @Override
-    protected ActionResult handleMeasurement(PlayerEntity player, World world, BlockPos pos, Direction dir) {
+    protected TypedActionResult<ItemStack> handleMeasurement(  PlayerEntity player, World world, Hand hand, BlockPos pos, Direction dir) {
         MeasurementData data = MEASUREMENTS.computeIfAbsent(player, p -> new MeasurementData());
         this.player=player;
         if (data.step == 0) {
             // 第一次点击，记录第一个点
             data.points[0] = pos;
-            // 标记为已记录第一个点
-            data.step = 1;
+            data.step = 1;  // 标记为已记录第一个点
             //记录世界
             data.worlds[0]=world;
             player.sendMessage(Text.literal("§a已记录第一个点的位置!"), false);
@@ -43,12 +46,14 @@ public class StraightRulerItem extends RulerTool {
             activePos.add(Visualization.getPosition(pos, dir));
 
         } else if (data.step == 1) {
+
             // 记录第二个点并计算距离
             data.points[1] = pos;
+            //记录世界
             data.worlds[1]=world;
             if (data.worlds[0]!=world){
                 player.sendMessage(Text.literal("§c尺子不能跨维度使用！"), false);
-                return ActionResult.FAIL;
+                return TypedActionResult.fail(player.getStackInHand(hand));
             }
             double distance = calculateDistance(data.points[0], data.points[1]);
             player.sendMessage(Text.literal("§a测量出两点的长度是: " + (int)Math.floor(distance+1) + " 格"), false);
@@ -58,26 +63,25 @@ public class StraightRulerItem extends RulerTool {
             //记录该坐标已生成粒子
             activePos.add(Visualization.getPosition(pos, dir));
             //并且在两点之间生成一条粒子线
-            spawnParticlesBetween(world, data.points[0], data.points[1],dir,"ruler");
+            spawnParticlesBetween(world, data.points[0], data.points[1],dir,"laserRuler");
 
         }else if (data.step == 2) {
             // 第三次点击
             double distance = calculateDistance(data.points[0], data.points[1]);
             player.sendMessage(Text.literal("§a测量出两点的长度是: " + (int)Math.floor(distance+1) + " 格"), false);
         }
-        return ActionResult.SUCCESS;
+        return TypedActionResult.success(player.getStackInHand(hand));
 
 
     }
     @Environment(EnvType.CLIENT)
     @Override
     protected void clearParticle() {
-        for (Vec3d pos : StraightRulerItem.activePos){
+        player.sendMessage(Text.literal("§a已清除测量标记！"), false);
+        for (Vec3d pos : LaserRulerItem.activePos){
             ParticleManager.removeParticle(pos);
         }
 //        ParticleManager.removeParticle();
-        StraightRulerItem.activePos.clear();
-
+        LaserRulerItem.activePos.clear();
     }
-
 }
