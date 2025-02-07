@@ -1,7 +1,11 @@
 {
-  "item.ruler-mod.straight_ruler":  "ruler",
-  "item.ruler-mod.laser_rangefinder": "laserRangefinder",
-  "item.ruler-mod.compass": "compass",
-  "message.ruler-mod.measure_start" : " The starting point of § a has been recorded! ",
-  "message.ruler-mod.measure_clean": "§a has cleared the measurement marker! "
+  "item.ruler-mod.straight_ruler": "Ruler",
+  "item.ruler-mod.laser_rangefinder": "Laser Rangefinder",
+  "item.ruler-mod.laser_ruler": "Laser Ruler",
+  "message.ruler-mod.measure_start": "§aThe starting point is recorded！",
+  "message.ruler-mod.cross_dimension_error": "§cRulers cannot be used across dimensions！",
+  "message.ruler-mod.measure_clear": "§aThe measure marker has been cleared！",
+  "message.ruler-mod.measure_distance": "§aMeasure the distance between the two points is:",
+  "message.ruler-mod.measure_block": "§aBlock:"
+
 }

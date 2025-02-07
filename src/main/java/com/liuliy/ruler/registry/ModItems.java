@@ -13,8 +13,6 @@ public class ModItems {
     // 定义物品实例
     public static final Item STRAIGHT_RULER = new StraightRulerItem();
 
-    public static final Item COMPASS = new CompassItem();
-
     public static final Item LASER_RANGEFINDER = new LaserRangefinderItem();
 
     public static final Item LASER_RULER = new LaserRulerItem();
@@ -22,7 +20,6 @@ public class ModItems {
     // 注册所有物品
     public static void register() {
         Registry.register(Registries.ITEM, new Identifier("ruler-mod", "straight_ruler"), STRAIGHT_RULER);
-        Registry.register(Registries.ITEM, new Identifier("ruler-mod", "compass"), COMPASS);
         Registry.register(Registries.ITEM, new Identifier("ruler-mod", "laser_rangefinder"), LASER_RANGEFINDER);
         Registry.register(Registries.ITEM, new Identifier("ruler-mod", "laser_ruler"), LASER_RULER);
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(ModItems::addItemsToIG);
@@ -30,7 +27,6 @@ public class ModItems {
     //添加到工具栏
     private static void addItemsToIG(FabricItemGroupEntries fabricItemGroupEntries) {
         fabricItemGroupEntries.add(STRAIGHT_RULER);
-        fabricItemGroupEntries.add(COMPASS);
         fabricItemGroupEntries.add(LASER_RANGEFINDER);
         fabricItemGroupEntries.add(LASER_RULER);
     }

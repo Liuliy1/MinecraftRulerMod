@@ -39,7 +39,7 @@ public class LaserRulerItem extends RulerToolPlus {
             data.step = 1;  // 标记为已记录第一个点
             //记录世界
             data.worlds[0]=world;
-            player.sendMessage(Text.literal("§a已记录第一个点的位置!"), false);
+            player.sendMessage(Text.literal("message.ruler-mod.measure_start"), false);
             //显示第一个点的粒子效果
             ParticleManager.addParticle(data.points[0],dir);
             //记录该坐标已生成粒子
@@ -52,11 +52,11 @@ public class LaserRulerItem extends RulerToolPlus {
             //记录世界
             data.worlds[1]=world;
             if (data.worlds[0]!=world){
-                player.sendMessage(Text.literal("§c尺子不能跨维度使用！"), false);
+                player.sendMessage(Text.literal("message.ruler-mod.cross_dimension_error"), false);
                 return TypedActionResult.fail(player.getStackInHand(hand));
             }
             double distance = calculateDistance(data.points[0], data.points[1]);
-            player.sendMessage(Text.literal("§a测量出两点的长度是: " + (int)Math.floor(distance+1) + " 格"), false);
+            player.sendMessage(Text.literal("message.ruler-mod.measure_distance " + (int)Math.floor(distance+1) + " message.ruler-mod.measure_block"), false);
             data.step = 2;  // 测量完成
             // 在第二个点上显示粒子效果
             ParticleManager.addParticle(data.points[1],dir);
@@ -68,7 +68,7 @@ public class LaserRulerItem extends RulerToolPlus {
         }else if (data.step == 2) {
             // 第三次点击
             double distance = calculateDistance(data.points[0], data.points[1]);
-            player.sendMessage(Text.literal("§a测量出两点的长度是: " + (int)Math.floor(distance+1) + " 格"), false);
+            player.sendMessage(Text.literal("message.ruler-mod.measure_distance " + (int)Math.floor(distance+1) + " message.ruler-mod.measure_block"), false);
         }
         return TypedActionResult.success(player.getStackInHand(hand));
 
@@ -77,7 +77,7 @@ public class LaserRulerItem extends RulerToolPlus {
     @Environment(EnvType.CLIENT)
     @Override
     protected void clearParticle() {
-        player.sendMessage(Text.literal("§a已清除测量标记！"), false);
+        player.sendMessage(Text.literal("message.ruler-mod.measure_clear！"), false);
         for (Vec3d pos : LaserRulerItem.activePos){
             ParticleManager.removeParticle(pos);
         }
