@@ -7,6 +7,7 @@
   "message.ruler-mod.measure_clear": "§aThe measure marker has been cleared！",
   "message.ruler-mod.measure_distance": "§aThe distance between the two points : %1$s §ablocks",
   "message.ruler-mod.measure_block": "§aBlock:",
-  "message.ruler-mod.aim_at_block": "§cPlease aim at the block"
+  "message.ruler-mod.aim_at_block": "§cPlease aim at the block",
+  "itemGroup.ruler-mod.group_name": "Ruler"
 
 }

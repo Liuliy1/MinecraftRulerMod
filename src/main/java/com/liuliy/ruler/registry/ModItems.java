@@ -9,6 +9,9 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
+import static com.liuliy.ruler.ModItemGroup.RULER_ITEM_GROUP_KEY;
+import static com.liuliy.ruler.ModItemGroup.Ruler_ITEM_GROUP;
+
 public class ModItems {
     // 定义物品实例
     public static final Item STRAIGHT_RULER = new StraightRulerItem();
@@ -22,7 +25,9 @@ public class ModItems {
         Registry.register(Registries.ITEM, new Identifier("ruler-mod", "straight_ruler"), STRAIGHT_RULER);
         Registry.register(Registries.ITEM, new Identifier("ruler-mod", "laser_rangefinder"), LASER_RANGEFINDER);
         Registry.register(Registries.ITEM, new Identifier("ruler-mod", "laser_ruler"), LASER_RULER);
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(ModItems::addItemsToIG);
+        Registry.register(Registries.ITEM_GROUP, RULER_ITEM_GROUP_KEY, Ruler_ITEM_GROUP);
+
+        ItemGroupEvents.modifyEntriesEvent(RULER_ITEM_GROUP_KEY).register(ModItems::addItemsToIG);
     }
     //添加到工具栏
     private static void addItemsToIG(FabricItemGroupEntries fabricItemGroupEntries) {
