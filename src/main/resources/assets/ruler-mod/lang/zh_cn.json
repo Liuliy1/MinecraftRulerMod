@@ -1,0 +1,7 @@
+{
+  "item.ruler-mod.straight_ruler": "直尺",
+  "item.ruler-mod.tape_measure": "卷尺",
+  "item.ruler-mod.compass": "圆规",
+  "message.ruler-mod.measure_start": "§a起点已记录！",
+  "message.ruler-mod.measure_clear": "§a已清除测量标记！"
+}

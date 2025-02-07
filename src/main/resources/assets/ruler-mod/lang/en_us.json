@@ -1,0 +1,7 @@
+{
+  "item.ruler-mod.straight_ruler":  "ruler",
+  "item.ruler-mod.tape_measure":  "Tape measure",
+  "item.ruler-mod.compass": "compass",
+  "message.ruler-mod.measure_start" : " The starting point of § a has been recorded! ",
+  "message.ruler-mod.measure_clean": "§a has cleared the measurement marker! "
+}
