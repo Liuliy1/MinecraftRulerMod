@@ -1,14 +1,10 @@
-package com.liuliy.ruler.tools;
+package com.liuliy.ruler.items;
 
 import com.liuliy.ruler.client.ParticleManager;
-import com.liuliy.ruler.client.Visualization;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
-import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
@@ -23,12 +19,12 @@ public class StraightRulerItem extends RulerTool {
     public StraightRulerItem() {
         super(new Item.Settings());
     }
-
+    PlayerEntity player;
     public static List<BlockPos> activePos = new ArrayList<>();
     @Override
     protected ActionResult handleMeasurement(PlayerEntity player, World world, BlockPos pos, Direction dir) {
         MeasurementData data = MEASUREMENTS.computeIfAbsent(player, p -> new MeasurementData());
-
+        this.player=player;
         if (data.step == 0) {
             // 第一次点击，记录第一个点
             data.points[0] = pos;
@@ -64,8 +60,10 @@ public class StraightRulerItem extends RulerTool {
 
     @Override
     protected void clearParticle() {
+        player.sendMessage(Text.literal("§a已清除测量标记！"), false);
         ParticleManager.removeParticle();
         StraightRulerItem.activePos.clear();
+
     }
 
 }

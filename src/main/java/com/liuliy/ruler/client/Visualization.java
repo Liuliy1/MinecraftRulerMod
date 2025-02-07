@@ -48,6 +48,28 @@ public class Visualization {
             }
         }
     }
+    // 在两点之间生成粒子效果的直线,不持续
+    @Environment(EnvType.CLIENT)
+    public static void spawnParticlesBetweenNow(World world, BlockPos point1, BlockPos point2,Direction dir) {
+        if (world.isClient) {
+            // 计算两点之间的差值
+            double dx = point2.getX() - point1.getX();
+            double dy = point2.getY() - point1.getY();
+            double dz = point2.getZ() - point1.getZ();
+            int particleCount = (int) Math.max(Math.abs(dx), Math.max(Math.abs(dy), Math.abs(dz)));
+
+            Vec3d offset = getOffset(dir);
+
+            // 在两点之间生成粒子
+            for (int i = 0; i <= particleCount; i++) {
+                double fraction = i / (double) particleCount;
+                double x = point1.getX() + dx * fraction;
+                double y = point1.getY() + dy * fraction;
+                double z = point1.getZ() + dz * fraction;
+                spawnParticleAt(world,new Vec3d(x,y,z).add(offset));
+            }
+        }
+    }
    //获取生成粒子的坐标
 
     public static Vec3d getPosition(BlockPos pos,Direction dir){
