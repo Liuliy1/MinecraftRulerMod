@@ -72,27 +72,7 @@ public class Visualization {
     @Environment(EnvType.CLIENT)
     public static Vec3d getPosition(BlockPos pos,Direction dir){
             // 计算粒子效果的位置：离方块面向玩家的面0.5格的距离
-//            double offsetX = 0.5, offsetY = 1.0, offsetZ = 0.5; // 默认位置在方块上方0.5格
-//            switch (dir) {
-//                case NORTH:
-//                    offsetZ = -0.5; // 朝北方向，调整Z轴
-//                    break;
-//                case SOUTH:
-//                    offsetZ = 0.5;  // 朝南方向，调整Z轴
-//                    break;
-//                case WEST:
-//                    offsetX = -0.5; // 朝西方向，调整X轴
-//                    break;
-//                case EAST:
-//                    offsetX = 0.5;  // 朝东方向，调整X轴
-//                    break;
-//                case UP:
-//                    offsetY = 1.5;  // 朝上方向，粒子更高一点
-//                    break;
-//                case DOWN:
-//                    offsetY = 0.5;  // 朝下方向，粒子更低一点
-//                    break;
-//            }
+
         Vec3d offset = switch (dir) {
             case NORTH -> new Vec3d(0.5, 1.0, -0.5);
             case SOUTH -> new Vec3d(0.5, 1.0, 0.5);

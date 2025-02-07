@@ -16,9 +16,6 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Stack;
-
-import static com.liuliy.ruler.client.Visualization.spawnParticlesBetween;
 
 public abstract class RulerTool extends Item {
     protected static final Map<PlayerEntity, MeasurementData> MEASUREMENTS = new HashMap<>();
@@ -76,9 +73,4 @@ public abstract class RulerTool extends Item {
         return Math.max(Math.abs(dx),Math.max(Math.abs(dy),Math.abs(dz)));
     }
 
-    protected static double calculateHorizontalDistance(BlockPos a, BlockPos b) {
-        int dx = b.getX() - a.getX();
-        int dz = b.getZ() - a.getZ();
-        return Math.sqrt(dx*dx + dz*dz);
-    }
 }

@@ -69,9 +69,6 @@ public class StraightRulerItem extends RulerTool {
 
     @Override
     protected void clearParticle() {
-//        for (BlockPos pos : StraightRulerItem.activePos){
-//            ParticleManager.removeParticle(pos);
-//        }
         ParticleManager.removeParticle();
         StraightRulerItem.activePos.clear();
     }
