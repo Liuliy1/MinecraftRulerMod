@@ -1,6 +1,8 @@
 package com.liuliy.ruler.items;
 
 import com.liuliy.ruler.client.ParticleManager;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -18,7 +20,7 @@ public class LaserRangefinderItem extends RulerToolPlus  {
     public LaserRangefinderItem() {
         super(new Item.Settings());
     }
-
+    @Environment(EnvType.CLIENT)
     @Override
     protected TypedActionResult<ItemStack> handleMeasurement(PlayerEntity player, World world, Hand hand, BlockPos pos, Direction dir) {
         // 记录第二个点并计算距离

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  L",
+    " R ",
+    "   "
+  ],
+  "key": {
+    "R": {
+      "item": "ruler-mod:straight_ruler"
+    },
+    "L": {
+      "item": "ruler-mod:laser_rangefinder"
+    }
+  },
+  "result": {
+    "item": "ruler-mod:laser_ruler",
+    "count": 1
+  }
+}

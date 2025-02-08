@@ -14,9 +14,9 @@ import net.fabricmc.api.Environment;
 
 
 
-
+@Environment(EnvType.CLIENT)
 public class Visualization {
-
+    @Environment(EnvType.CLIENT)
     // 在指定位置显示粒子效果
     public static void spawnParticleAt(World world, Vec3d position) {
         if (world.isClient) {

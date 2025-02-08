@@ -25,6 +25,7 @@ public class StraightRulerItem extends RulerTool {
     }
     PlayerEntity player;
     public static List<Vec3d> activePos = new ArrayList<>();
+    @Environment(EnvType.CLIENT)
     @Override
     protected ActionResult handleMeasurement(PlayerEntity player, World world, BlockPos pos, Direction dir) {
         MeasurementData data = MEASUREMENTS.computeIfAbsent(player, p -> new MeasurementData());

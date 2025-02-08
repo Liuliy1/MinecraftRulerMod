@@ -18,7 +18,7 @@ import static com.liuliy.ruler.client.Visualization.*;
 
 
 // 在客户端工具类或独立类中
-@Environment(EnvType.CLIENT)
+
 public class ParticleManager {
     private static final List<ActiveParticle> activeParticles = new ArrayList<>();
 
@@ -48,7 +48,7 @@ public class ParticleManager {
     // 注册客户端Tick事件
     public static void init() {
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
-            if (client.world != null) {
+            if (client.world != null ) {
                 // 每Tick更新所有活动测量
                 activeParticles.forEach(ActiveParticle ->
                         spawnParticleAt(client.world, ActiveParticle.position)

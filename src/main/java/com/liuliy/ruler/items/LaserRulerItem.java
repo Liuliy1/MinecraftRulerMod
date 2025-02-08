@@ -28,7 +28,7 @@ public class LaserRulerItem extends RulerToolPlus {
         super(new Item.Settings());
     }
     PlayerEntity player;
-
+    @Environment(EnvType.CLIENT)
     @Override
     protected TypedActionResult<ItemStack> handleMeasurement(  PlayerEntity player, World world, Hand hand, BlockPos pos, Direction dir) {
         MeasurementData data = MEASUREMENTS.computeIfAbsent(player, p -> new MeasurementData());

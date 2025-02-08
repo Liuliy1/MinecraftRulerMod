@@ -9,7 +9,7 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.world.World;
 
 public class RulerMod implements ModInitializer {
-	public static final MinecraftClient client = MinecraftClient.getInstance();
+
 	public static final String MOD_ID = "ruler-mod";
 	@Override
 	public void onInitialize() {
