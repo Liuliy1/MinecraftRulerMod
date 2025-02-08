@@ -77,6 +77,9 @@ public class LaserRulerItem extends RulerToolPlus {
     @Environment(EnvType.CLIENT)
     @Override
     protected void clearParticle() {
+        if (this.player == null) {
+            return;
+        }
         player.sendMessage(Text.translatable("message.ruler-mod.measure_clear"), false);
         for (Vec3d pos : LaserRulerItem.activePos){
             ParticleManager.removeParticle(pos);
