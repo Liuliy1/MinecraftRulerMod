@@ -1,9 +1,5 @@
 # 尺子mod
 
-[![GitHub license](https://img.shields.io/github/license/%E4%BD%A0%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D/%E4%BD%A0%E7%9A%84%E4%BB%93%E5%BA%93%E5%90%8D)](https://github.com/你的用户名/你的仓库名/blob/main/LICENSE)
-[![Minecraft Version](https://img.shields.io/badge/Minecraft-1.XX.X-blue)](https://www.minecraft.net/)
-[![Forge/Fabric Version](https://img.shields.io/badge/Forge/Fabric-XX.X.X-orange)](https://files.minecraftforge.net/ 或 https://fabricmc.net/)
-
 ------
 
 ## **目录**
