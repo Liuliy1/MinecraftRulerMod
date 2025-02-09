@@ -3,9 +3,9 @@
 	"id": "ruler-mod",
 	"version": "${version}",
 	"name": "Ruler Mod",
-	"description": "mod描述",
+	"description": "提供了几个用于测量的尺子",
 	"authors": [
-		"琉璃"
+		"Liuliy"
 	],
 	"contact": {
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
