@@ -7,6 +7,13 @@
 	"authors": [
 		"Liuliy"
 	],
+	"custom": {
+		"modmenu": {
+			"links": {
+				"modmenu.issues": "https://github.com/Liuliy1/MinecraftRulerMod/issues"
+			}
+		}
+	},
 	"contact": {
 		"sources": "https://github.com/Liuliy1/MinecraftRulerMod"
 	},
@@ -36,4 +43,5 @@
 	"suggests": {
 		"another-mod": "*"
 	}
+
 }
