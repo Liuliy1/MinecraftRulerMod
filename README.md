@@ -2,19 +2,6 @@
 
 ------
 
-## **目录**
-
-- [简介](https://chat.deepseek.com/a/chat/s/ecbde605-d96e-45fd-9ae4-08858ddf658b#简介)
-- [功能](https://chat.deepseek.com/a/chat/s/ecbde605-d96e-45fd-9ae4-08858ddf658b#功能)
-- [安装](https://chat.deepseek.com/a/chat/s/ecbde605-d96e-45fd-9ae4-08858ddf658b#安装)
-- [配置](https://chat.deepseek.com/a/chat/s/ecbde605-d96e-45fd-9ae4-08858ddf658b#配置)
-- [依赖](https://chat.deepseek.com/a/chat/s/ecbde605-d96e-45fd-9ae4-08858ddf658b#依赖)
-- [许可证](https://chat.deepseek.com/a/chat/s/ecbde605-d96e-45fd-9ae4-08858ddf658b#许可证)
-- [贡献](https://chat.deepseek.com/a/chat/s/ecbde605-d96e-45fd-9ae4-08858ddf658b#贡献)
-- [支持](https://chat.deepseek.com/a/chat/s/ecbde605-d96e-45fd-9ae4-08858ddf658b#支持)
-
-------
-
 ## **简介**
 
 为游戏添加了几个测量方块之间距离的工具
