@@ -24,8 +24,11 @@
 ## **功能**
 
 - 直尺：点击方块测量两个方块之间的距离
+  https://github.com/Liuliy1/MinecraftRulerMod/blob/master/img/ruler.png
 - 激光测距仪：远程测量指向的方块到玩家的距离
+  https://github.com/Liuliy1/MinecraftRulerMod/blob/master/img/laser_rangefinder.png
 - 激光直尺：远程测量两个方块之间的距离
+  https://github.com/Liuliy1/MinecraftRulerMod/blob/master/img/laser_ruler.png
 
 ------
 
@@ -49,7 +52,6 @@
 本项目采用 **MIT 许可证**。
 [![License](https://img.shields.io/badge/License-MIT-green)](https://opensource.org/licenses/MIT)
 
-复制
 
 ```
 MIT License
