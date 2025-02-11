@@ -24,11 +24,11 @@
 ## **功能**
 
 - 直尺：点击方块测量两个方块之间的距离
-  https://github.com/Liuliy1/MinecraftRulerMod/blob/master/img/ruler.png
+  ![image](https://github.com/Liuliy1/MinecraftRulerMod/blob/master/img/ruler.png)
 - 激光测距仪：远程测量指向的方块到玩家的距离
-  https://github.com/Liuliy1/MinecraftRulerMod/blob/master/img/laser_rangefinder.png
+  ![image](https://github.com/Liuliy1/MinecraftRulerMod/blob/master/img/laser_rangefinder.png)
 - 激光直尺：远程测量两个方块之间的距离
-  https://github.com/Liuliy1/MinecraftRulerMod/blob/master/img/laser_ruler.png
+  ![image](https://github.com/Liuliy1/MinecraftRulerMod/blob/master/img/laser_ruler.png)
 
 ------
 
